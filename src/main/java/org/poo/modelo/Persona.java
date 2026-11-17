@@ -35,7 +35,10 @@ public abstract class Persona implements Autenticable {
 
     public int getId() { return id; }
     public String getCorreo() { return correo; }
-    public void setContrasena(String clave) { this.contrasena = clave; }
+    public void setNombres(String nombres) { this.nombres = nombres; }
+    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
+    public void setDni(String dni) { this.dni = dni; }
+
 
     public abstract String getRol();
 }

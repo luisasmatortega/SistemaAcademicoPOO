@@ -33,4 +33,8 @@ public class Docente extends Persona implements Evaluador {
     public String getRol() {
         return "DOCENTE";
     }
+
+    public void setEspecialidad(String nuevaEspecialidad){
+        this.especialidad = nuevaEspecialidad;
+    }
 }

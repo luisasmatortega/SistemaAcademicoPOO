@@ -13,8 +13,8 @@ public class Matricula {
     private Estudiante estudiante;
     private Curso curso;
     private PeriodoAcademico periodo;
-    private List<Nota> notas;          // Composición
-    private List<Asistencia> asistencias; // Composición
+    private List<Nota> notas;
+    private List<Asistencia> asistencias;
 
     public Matricula(Estudiante estudiante, Curso curso, PeriodoAcademico periodo) {
         this.fecha = LocalDate.now();
@@ -48,4 +48,7 @@ public class Matricula {
     public List<Nota> getNotas() { return notas; }
     public Curso getCurso() { return curso; }
     public EstadoMatricula getEstado() { return estado; }
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
 }

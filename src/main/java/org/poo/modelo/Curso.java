@@ -49,4 +49,5 @@ public class Curso {
     public String getNombre() { return nombre; }
     public String getCodigo() { return codigo; }
     public List<Horario> getHorarios() { return horarios; }
+
 }
