@@ -29,9 +29,7 @@ public class Main {
         scanner.close();
     }
 
-    // ==========================================
-    // PRECARGA
-    // ==========================================
+    // Carga de datos
     private static PeriodoAcademico precargarDatos(Administrador admin) {
         System.out.println("Inicializando datos precargados...");
 
@@ -65,13 +63,11 @@ public class Main {
         return periodo;
     }
 
-    // ==========================================
-    // MENÚ
-    // ==========================================
+
     private static void mostrarMenu() {
-        System.out.println("\n========================================");
+        System.out.println("*".repeat(40));
         System.out.println("      MENÚ PRINCIPAL - SISTEMA ACADÉMICO");
-        System.out.println("========================================");
+        System.out.println("*".repeat(40));
         System.out.println("1. Listar Alumnos");
         System.out.println("2. Registrar Nuevo Alumno");
         System.out.println("3. Listar Docentes");
@@ -98,9 +94,6 @@ public class Main {
         }
     }
 
-    // ==========================================
-    // ACCIONES DEL MENÚ
-    // ==========================================
     private static void registrarAlumno(Scanner sc, Administrador admin) {
         int id = leerEntero(sc, "ID del alumno: ");
         String nombres = leerTexto(sc, "Nombres: ");
@@ -138,7 +131,7 @@ public class Main {
         String codEst = leerTexto(sc, "Ingrese el código del estudiante a matricular: ");
         Estudiante estudiante = admin.buscarAlumno(codEst);
         if (estudiante == null) {
-            System.out.println("❌ Estudiante no encontrado con ese código.");
+            System.out.println("Estudiante no encontrado con ese código.");
             return;
         }
 
@@ -146,16 +139,14 @@ public class Main {
         String codCurso = leerTexto(sc, "Ingrese el código del curso a matricular (ej. INF201): ");
         Curso curso = admin.buscarCurso(codCurso);
         if (curso == null) {
-            System.out.println("❌ Curso no encontrado con ese código.");
+            System.out.println("Curso no encontrado con ese código.");
             return;
         }
 
         admin.matricularAlumno(estudiante, curso, periodo);
     }
 
-    // ==========================================
-    // LECTURA DE DATOS
-    // ==========================================
+    // Lectura de datos
     private static String leerTexto(Scanner sc, String mensaje) {
         System.out.print(mensaje);
         return sc.nextLine();

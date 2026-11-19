@@ -10,7 +10,7 @@ public class Curso {
     private int creditos;
     private int vacantes;
     private Docente docente;
-    private List<Horario> horarios; // Composición 1 -> 1..*
+    private List<Horario> horarios;
 
     public Curso(String codigo, String nombre, int creditos, int vacantes) {
         this.codigo = codigo;
